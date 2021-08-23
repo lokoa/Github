@@ -55,14 +55,10 @@ class MainViewController: UIViewController {
         ui.tableView.refreshControl?.addTarget(self, action: #selector(getData), for: .valueChanged)
         
         searchController.searchBar.scopeButtonTitles = ["Stars", "Forks", "Updated"]
-        searchController.searchBar.delegate = self
-        searchController.searchBar.searchTextField.textColor = Color.text2
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search repositories"
-        searchController.searchBar.searchTextField.leftView?.tintColor = Color.text2
-        searchController.searchBar.tintColor = Color.brand
-        searchController.searchBar.barTintColor = Color.backgroundLighter
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true

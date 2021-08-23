@@ -29,20 +29,7 @@ class IconLabelView: UIStackView {
     
     required init(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    
-//    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
     // MARK: Custom func
-//    func setText(font: UIFont?, color: UIColor? = nil) {
-//        if let font = font {
-//            firstLabel.font = font
-//            secondLabel.font = font
-//        }
-//        if let color = color {
-//            firstLabel.textColor = color
-//            secondLabel.textColor = color
-//        }
-//    }
     func set(image: UIImage?, text: String) {
         iconView.contentMode = .scaleAspectFit
         iconView.image = image

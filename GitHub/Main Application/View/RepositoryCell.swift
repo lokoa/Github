@@ -39,9 +39,6 @@ class RepositoryCell: UITableViewCell {
         ui.authorLabel.text = repository.owner.login
         ui.descriptionLabel.text = repository.description
         ui.avatarImageButton.kf.setImage(with: URL(string: repository.owner.avatar_url), for: .normal)
-        
-        //        ui.avatarImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToUserDetails)))
-        
         ui.forksLabel.set(image: UIImage(named: GKey.fork), text: repository.forks.roundedWithAbbreviations.description)
         ui.watchersLabel.set(image: UIImage(named: GKey.watcher), text: repository.watchers.roundedWithAbbreviations.description)
         ui.issuesLabel.set(image: UIImage(named: GKey.issue), text: repository.open_issues.roundedWithAbbreviations.description)
@@ -49,9 +46,7 @@ class RepositoryCell: UITableViewCell {
     
     
     @objc private func goToUserDetails(url: String) {
-        print("aaaa")
         delegate?.userDetailsDelegate(url: url)
-//        self.navigationController?.pushViewController(UserDetailsViewController(url: url), animated: true)
     }
     
 }
